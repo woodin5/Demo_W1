@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Demo_W1</string>
+    <string name="eventBus">EventBus</string>
+    <string name="sweetDialog">SweetDialog</string>
+    <string name="network">Network</string>
+    <string name="adapter">Adapter</string>
+    <string name="fragment">Fragment</string>
+
+    <!--adapter-->
+    <string name="showString">show String</string>
+    <string name="showBean">show Bean</string>
+    <string name="showHorizontal">show Horizontal</string>
+    <string name="showVertical">show Vertical</string>
+    <string name="show">show </string>
+</resources>
