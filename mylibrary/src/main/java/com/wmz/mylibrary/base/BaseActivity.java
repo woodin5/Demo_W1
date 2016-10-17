@@ -1,23 +1,22 @@
 package com.wmz.mylibrary.base;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.Window;
 
-import com.wmz.mylibrary.EventBusMessageEvent;
+import com.wmz.mylibrary.EventBusMessage;
 import com.wmz.mylibrary.manager.AppManager;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 
 
-public abstract class BaseActivity extends FragmentActivity implements View.OnClickListener {
+public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener {
     protected Context mContext;
 
     @Override
@@ -28,6 +27,8 @@ public abstract class BaseActivity extends FragmentActivity implements View.OnCl
         EventBus.getDefault().register(this);
         init();
         initView();
+        initEvent();
+        initData();
         //管理activity
         AppManager.getAppManager().addActivity(this);
     }
@@ -39,18 +40,25 @@ public abstract class BaseActivity extends FragmentActivity implements View.OnCl
      */
     protected abstract int getLayoutResourceId();
 
-
     /**
      * 初始化View之前做的事
      */
     protected void init() {
-
     }
 
     /**
      * 初始化空控件
      */
-    protected abstract void initView();
+    protected void initView(){}
+
+    /**
+     * 初始化事件
+     */
+    protected void initEvent(){}
+    /**
+     * 初始化数据
+     */
+    protected  void initData(){}
 
     /**
      * 分装findviewById
@@ -100,11 +108,10 @@ public abstract class BaseActivity extends FragmentActivity implements View.OnCl
     }
 
     @Subscribe
-    public void handleEventBus(EventBusMessageEvent event){
+    public void handleEventBus(EventBusMessage event){
     }
 
     @Override
     public void onClick(View v) {
-
     }
 }

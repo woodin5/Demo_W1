@@ -1,7 +1,6 @@
 package com.wmz.demo_w1;
 
 import android.content.Context;
-import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -9,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,9 +16,9 @@ import android.widget.Toast;
 import com.wmz.demo_w1.bean.User;
 import com.wmz.mylibrary.adapter.BaseRecyclerAdapter;
 import com.wmz.mylibrary.adapter.MyCommonAdapter;
+import com.wmz.mylibrary.adapter.MyCommonRecyclerAdapter;
 import com.wmz.mylibrary.adapter.RecyclerViewHolder;
 import com.wmz.mylibrary.adapter.ViewHolder;
-import com.wmz.mylibrary.base.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,10 +26,13 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.OnClick;
 
-public class AdapterActivity extends BaseActivity {
+public class AdapterActivity extends com.wmz.demo_w1.base.BaseActivity {
 
     @BindView(R.id.adapter_listview)
     ListView mLv;
+
+    @BindView(R.id.adapter_gridview)
+    GridView mGv;
 
     @BindView(R.id.adapter_recyclerView)
     RecyclerView mRecyclerView;
@@ -39,6 +42,7 @@ public class AdapterActivity extends BaseActivity {
     protected int getLayoutResourceId() {
         return R.layout.activity_adapter;
     }
+
 
     @OnClick(R.id.btn_showString)
      void showString() {
@@ -57,6 +61,7 @@ public class AdapterActivity extends BaseActivity {
                 return android.R.layout.simple_list_item_1;
             }
         };
+
         mLv.setAdapter(mAdapter);
         mLv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -64,6 +69,7 @@ public class AdapterActivity extends BaseActivity {
                 Toast.makeText(AdapterActivity.this,"p-string="+position,Toast.LENGTH_SHORT).show();
             }
         });
+        mGv.setAdapter(mAdapter);
     }
 
     @OnClick(R.id.btn_showBean)
@@ -100,6 +106,7 @@ public class AdapterActivity extends BaseActivity {
                 Toast.makeText(AdapterActivity.this,"p-bean="+position,Toast.LENGTH_SHORT).show();
             }
         });
+        mGv.setAdapter(mAdapter);
     }
 
 
@@ -109,9 +116,8 @@ public class AdapterActivity extends BaseActivity {
         for(int i=0;i<15;i++){
             mList.add("hello_"+i);
         }
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(AdapterActivity.this, LinearLayoutManager.HORIZONTAL,false);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(AdapterActivity.this, LinearLayoutManager.VERTICAL,false);
         mRecyclerView.setLayoutManager(mLayoutManager);
-        mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setAdapter(new RecyclerAdapter(mList));
     }
 
@@ -121,16 +127,18 @@ public class AdapterActivity extends BaseActivity {
         for(int i=0;i<15;i++){
             mList.add("hello_"+i);
         }
+
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(AdapterActivity.this,3, GridLayoutManager.VERTICAL,false);
         mRecyclerView.setLayoutManager(mLayoutManager);
         MyRecyclerAdapter<String> mAdapter = new MyRecyclerAdapter(AdapterActivity.this,mList);
+        mRecyclerView.setAdapter(mAdapter);
+
         mAdapter.setOnItemClickListener(new BaseRecyclerAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View itemView, int pos) {
                 Toast.makeText(AdapterActivity.this,"pos="+pos,Toast.LENGTH_SHORT).show();
             }
         });
-        mRecyclerView.setAdapter(mAdapter);
     }
 
 
@@ -153,6 +161,11 @@ public class AdapterActivity extends BaseActivity {
                     Toast.makeText(AdapterActivity.this,"btn onclick",Toast.LENGTH_SHORT).show();
                 }
             });
+        }
+
+        @Override
+        public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+
         }
     }
 
@@ -179,6 +192,7 @@ public class AdapterActivity extends BaseActivity {
             return mList.size();
         }
     }
+
     class RecyclerViewHolder extends RecyclerView.ViewHolder{
         private TextView text;
         public RecyclerViewHolder(View itemView) {

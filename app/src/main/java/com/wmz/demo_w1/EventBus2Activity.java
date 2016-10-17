@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.wmz.mylibrary.EventBusMessage;
+
 import org.greenrobot.eventbus.EventBus;
 
 
@@ -20,7 +22,7 @@ public class EventBus2Activity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EventBus.getDefault().post(new EventBusMessageEvent("EventBus2Activity clicked",1));
+                EventBus.getDefault().post(new EventBusMessage("EventBus2Activity clicked",1));
             }
         });
     }

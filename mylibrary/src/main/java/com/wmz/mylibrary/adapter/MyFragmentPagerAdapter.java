@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -27,8 +28,19 @@ public class MyFragmentPagerAdapter<T extends Fragment> extends FragmentPagerAda
         mList = list;
         mTitles = titles;
     }
+
+    public MyFragmentPagerAdapter(FragmentManager fm, List<T> list,String[] titles) {
+        super(fm);
+        mList = list;
+        mTitles.addAll(Arrays.asList(titles));
+    }
+
     public void setmTitles(List<String> mTitles) {
         this.mTitles = mTitles;
+    }
+
+    public void setmTitles(String[] mTitles) {
+        this.mTitles.addAll(Arrays.asList(mTitles));
     }
 
     @Override

@@ -2,6 +2,7 @@ package com.wmz.mylibrary.manager;
 
 import android.os.Handler;
 
+import com.wmz.mylibrary.network.NetworkResponse;
 import com.wmz.mylibrary.utils.FormFile;
 import com.wmz.mylibrary.utils.HandlerUtils;
 import com.wmz.mylibrary.utils.UploadUtil;

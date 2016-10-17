@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
@@ -29,6 +28,14 @@ public class TabView extends RelativeLayout {
      * the TextView selected color,default is orange
      */
     private int mTextViewSelColor;
+    /**
+     * the ChildView unselected color,default is black
+     */
+    private int mChildViewUnSelColor;
+    /**
+     * the ChildView selected color,default is orange
+     */
+    private int mChildViewSelColor;
     /**
      * the TextView unselected color,default is black
      */
@@ -91,6 +98,8 @@ public class TabView extends RelativeLayout {
     private void initDefaultAttrs(Context context){
         mTextViewSelColor= Color.rgb(252,88,17);
         mTextViewUnSelColor= Color.rgb(129,130,149);
+        mChildViewSelColor = Color.rgb(255,255,255);
+        mChildViewUnSelColor = Color.rgb(255,255,255);
         mTabViewBackgroundColor= Color.rgb(255,255,255);
         mTabViewHeight=TabViewUtil.dp2px(context,52);
         mImageViewTextViewMargin=TabViewUtil.dp2px(context,2);
@@ -173,16 +182,17 @@ public class TabView extends RelativeLayout {
         this.addView(mFragmentContainer);
 
     }
-    private void initTabChildView(){
+    private void    initTabChildView(){
         tabview.removeAllViews();
         unselectedIconList=new ArrayList<>();
 
 
         for(int i=0;i<mTabViewChildList.size();i++){
             final TabViewChild t=mTabViewChildList.get(i);
-            LinearLayout tabChild=new LinearLayout(getContext());
+            final LinearLayout tabChild=new LinearLayout(getContext());
             tabChild.setGravity(Gravity.CENTER);
             tabChild.setOrientation(LinearLayout.VERTICAL);
+            tabChild.setBackgroundColor(mChildViewUnSelColor);
             LinearLayout.LayoutParams tabChildParams=null;
             if(mTabViewGravity==Gravity.BOTTOM){
                 tabChildParams=new LinearLayout.LayoutParams(0,LMP,1.0f);
@@ -235,12 +245,14 @@ public class TabView extends RelativeLayout {
                     imageview.setImageResource(t.getImageViewSelIcon());
                     textview.setText(t.getTextViewText());
                     textview.setTextColor(mTextViewSelColor);
+                    tabChild.setBackgroundColor(mChildViewSelColor);
                 }
             }else{
                 if(mTabViewDefaultPosition==i){
                     imageview.setImageResource(t.getImageViewSelIcon());
                     textview.setText(t.getTextViewText());
                     textview.setTextColor(mTextViewSelColor);
+                    tabChild.setBackgroundColor(mChildViewSelColor);
                 }
             }
             tabChild.setOnClickListener(new OnClickListener() {
@@ -248,7 +260,9 @@ public class TabView extends RelativeLayout {
                     reSetAll();
                     imageview.setImageResource(t.getImageViewSelIcon());
                     textview.setText(t.getTextViewText());
-                    textview.setTextColor(mTextViewSelColor);
+//                    textview.setTextColor(mTextViewSelColor);
+                    textview.setTextColor(Color.argb(255,255,0,0));
+                    tabChild.setBackgroundColor(mChildViewSelColor);
                     index = currentPosition;
                     showOrHide();
                     if(listener!=null){
@@ -271,6 +285,7 @@ public class TabView extends RelativeLayout {
         reSetAll();
         final TabViewChild t=mTabViewChildList.get(position);
         LinearLayout layout = (LinearLayout) tabview.getChildAt(position);
+        layout.setBackgroundColor(mChildViewSelColor);
         ImageView imageView = (ImageView) layout.getChildAt(0);
         TextView textView  = (TextView) layout.getChildAt(1);
         imageView.setImageResource(t.getImageViewSelIcon());
@@ -296,6 +311,7 @@ public class TabView extends RelativeLayout {
     private void reSetAll(){
         for(int i=0;i<tabview.getChildCount();i++){
             LinearLayout tabChild= (LinearLayout) tabview.getChildAt(i);
+            tabChild.setBackgroundColor(mChildViewUnSelColor);
             for(int j=0;j<tabChild.getChildCount();j++){
                 ImageView iv= (ImageView) tabChild.getChildAt(0);
                 TextView tv= (TextView) tabChild.getChildAt(1);
@@ -323,6 +339,15 @@ public class TabView extends RelativeLayout {
     public void setTextViewUnSelectedColor(int color){
         this.mTextViewUnSelColor=color;
     }
+
+    public void setChildViewUnSelColor(int color) {
+        this.mChildViewUnSelColor = color;
+    }
+
+    public void setChildViewSelColor(int color) {
+        this.mChildViewSelColor = color;
+    }
+
     public void setTabViewBackgroundColor(int color){
         this.mTabViewBackgroundColor=color;
         tabview.setBackgroundColor(color);

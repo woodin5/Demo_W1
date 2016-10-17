@@ -4,7 +4,7 @@ import android.os.Handler;
 import android.os.Message;
 
 import com.wmz.mylibrary.manager.ExecutorManager;
-import com.wmz.mylibrary.manager.OkHttpManager;
+import com.wmz.mylibrary.network.OkHttpRequest;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -15,26 +15,19 @@ import okhttp3.RequestBody;
 
 
 public class OkHttpHelper{
-    private OkHttpManager okHttpManager;
-    private static OkHttpHelper instance;
-
+    private volatile static OkHttpHelper instance;
+    private OkHttpHelper(){
+    }
     public static OkHttpHelper getInstance() {
+        if(instance==null){
+            synchronized (OkHttpHelper.class){
+                if(instance==null){
+                    instance = new OkHttpHelper();
+                }
+            }
+        }
         return instance;
     }
-
-    private OkHttpHelper(){
-        okHttpManager = OkHttpManager.getManager();
-    }
-
-    /**
-     * 初始化
-     */
-    public static void init(){
-        if(instance==null){
-            instance = new OkHttpHelper();
-        }
-    }
-
 
     public void execute(final String url, final Handler handler,final int what){
         ExecutorManager.execute(new Runnable() {
@@ -60,14 +53,6 @@ public class OkHttpHelper{
     }
 
 
-    /**
-     * 执行get请求
-     * @param url
-     * @return
-     */
-    public String execute(final String url){
-        return okHttpManager.execute(url);
-    }
 
     /**
      * 执行post请求
@@ -85,16 +70,26 @@ public class OkHttpHelper{
     }
 
     /**
+     * 执行get请求
+     * @param url
+     * @return
+     */
+    public String execute(final String url){
+        return OkHttpRequest.getInstance().execute(url);
+    }
+
+    /**
      * 执行post请求
      * @param url
      * @param body
      * @return
      */
     public String execute(String url, RequestBody body){
-        return okHttpManager.execute(url,body);
+        return OkHttpRequest.getInstance().execute(url,body);
     }
+
     public void enqueue(String url, Callback responseCallback){
-        okHttpManager.enqueue(url,responseCallback);
+        OkHttpRequest.getInstance().enqueue(url,responseCallback);
     }
 
 

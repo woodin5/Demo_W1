@@ -3,4 +3,8 @@
     <string name="cancel">cancel</string>
     <string name="confirm">confirm</string>
     <string name="prompt">prompt</string>
+    <string name="btn">btn</string>
+    <string name="tv">tv</string>
+    <string name="et">et</string>
+    <string name="img">img</string>
 </resources>

@@ -3,7 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.wmz.demo_w1">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:supportsRtl="true"
@@ -53,16 +60,157 @@
                 <category android:name="LIST" />
             </intent-filter>
         </activity>
-        <activity android:name=".FragementActivity"
+        <activity
+            android:name=".FragmentActivity"
             android:label="@string/fragment">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="LIST" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".DialogActivity"
+            android:label="@string/dialog"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="LIST" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MaterialDialogActivity"
+            android:label="@string/materialDialog">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="LIST" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".RecyclerViewActivity"
+            android:label="@string/recyclerview">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="LIST" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AutoLayoutActivity"
+            android:label="@string/autoLayout">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="LIST" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="design_width"
+            android:value="1080" />
+        <meta-data
+            android:name="design_height"
+            android:value="1920" />
+
+        <activity
+            android:name=".SplitScreenActivity"
+            android:label="@string/splitScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="LIST" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".NwDrawerLayoutActivity"
+            android:label="@string/nwDrawerLayout">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="LIST" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".NwTabLayoutActivity"
+            android:label="@string/nwTabLayout">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="LIST" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".NwSwipeRefreshLayoutActivity"
+            android:label="@string/nwSwipeRefreshLayout">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="LIST" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".FlyBannerActivity"
+            android:label="@string/flyBanner">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="LIST" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AVLoadingIndicatorViewActivity"
+            android:label="@string/AVLoadingIndicatorView">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="LIST" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".CrashActivity"
+            android:label="@string/crash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="LIST" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".TextDrawableActivity"
+            android:label="@string/textDrawable">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="LIST" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".HTML5CustomWebViewActivity"
+            android:label="@string/HTML5CustomWebView">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="LIST" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ViewDragActivity"
+            android:label="@string/viewDrag">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="LIST" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".TabActivity"
+            android:label="@string/tab">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="LIST"/>
             </intent-filter>
         </activity>
-
-        <activity android:name=".BaseActivity"/>
     </application>
 
 </manifest>

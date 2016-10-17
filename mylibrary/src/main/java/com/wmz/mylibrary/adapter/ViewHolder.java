@@ -23,7 +23,7 @@ public class ViewHolder {
     /**
      * @param itemView
      */
-    ViewHolder(View itemView) {
+    public ViewHolder(View itemView) {
         mHolderImpl = new ViewHolderImpl(itemView);
     }
 

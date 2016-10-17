@@ -74,6 +74,7 @@ public class PagerSlidingTab extends HorizontalScrollView {
 
     private int tabTextSize = 14;
     private int tabTextColor = 0xFF666666;
+    private int tabTextSelectedColor = 0xFFFF0000;
     private Typeface tabTypeface = null;
     private int tabTypefaceStyle = Typeface.BOLD;
 
@@ -110,6 +111,7 @@ public class PagerSlidingTab extends HorizontalScrollView {
         TypedArray a = context.obtainStyledAttributes(attrs, ATTRS);
         tabTextSize = a.getDimensionPixelSize(0, tabTextSize);
         tabTextColor = a.getColor(1, tabTextColor);
+        tabTextSelectedColor = a.getColor(1, tabTextSelectedColor);
         a.recycle();
         a = context.obtainStyledAttributes(attrs, R.styleable.PagerSlidingTab);
         indicatorColor = a.getColor(R.styleable.PagerSlidingTab_indicatorColor, indicatorColor);
@@ -217,7 +219,8 @@ public class PagerSlidingTab extends HorizontalScrollView {
                 TextView tab = (TextView) v;
                 tab.setTextSize(TypedValue.COMPLEX_UNIT_PX, tabTextSize);
                 tab.setTypeface(tabTypeface, tabTypefaceStyle);
-                tab.setTextColor(i==0?getResources().getColor(R.color.blue):tabTextColor);
+//                tab.setTextColor(i==0?getResources().getColor(R.color.blue):tabTextColor);
+                tab.setTextColor(i==0?tabTextSelectedColor:tabTextColor);
                 if (textAllCaps) {
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
                         tab.setAllCaps(true);
@@ -264,9 +267,18 @@ public class PagerSlidingTab extends HorizontalScrollView {
         }
     }
 
+    public void setNoline(boolean noline) {
+        isNoline = noline;
+    }
+
+    private boolean isNoline = false;
+
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        if(isNoline){
+            return;
+        }
         if (isInEditMode() || tabCount == 0) {
             return;
         }
@@ -321,7 +333,8 @@ public class PagerSlidingTab extends HorizontalScrollView {
                 View v = tabsContainer.getChildAt(i);
                 if(v instanceof TextView){
                     TextView textView = (TextView) v;
-                    textView.setTextColor(i==pager.getCurrentItem()?getResources().getColor(R.color.blue):tabTextColor);
+//                    textView.setTextColor(i==pager.getCurrentItem()?getResources().getColor(R.color.blue):tabTextColor);
+                    textView.setTextColor(i==pager.getCurrentItem()?tabTextSelectedColor:tabTextColor);
                 }
             }
         }
@@ -438,6 +451,20 @@ public class PagerSlidingTab extends HorizontalScrollView {
 
     public void setTextColorResource(int resId) {
         this.tabTextColor = getResources().getColor(resId);
+        updateTabStyles();
+    }
+
+    public int getTabTextSelectedColor() {
+        return tabTextSelectedColor;
+
+    }
+    public void setTabTextSelectedColor(int tabTextSelectedColor) {
+        this.tabTextSelectedColor = tabTextSelectedColor;
+        updateTabStyles();
+    }
+
+    public void setTabTextSelectedColorResource(int tabTextSelectedColor) {
+        this.tabTextSelectedColor = getResources().getColor(tabTextSelectedColor);
         updateTabStyles();
     }
 

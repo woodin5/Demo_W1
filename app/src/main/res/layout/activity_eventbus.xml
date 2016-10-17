@@ -3,17 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+    <include layout="@layout/item_btn"/>
 
-    <Button
-        android:id="@+id/btn_try"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="btn_bty"/>
-    <TextView
-        android:id="@+id/tv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/app_name"/>
     <FrameLayout
         android:id="@+id/layout_container"
         android:layout_width="match_parent"
