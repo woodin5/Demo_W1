@@ -23,7 +23,7 @@ import java.util.Enumeration;
  * HttpURLConnection网络执行
  * Created by wmz on 20/6/16.
  */
-public class NetworkExecuter {
+public class NetworkExecutor {
 
 
     public static String getLocalIpAddress() {

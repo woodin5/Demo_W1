@@ -1,7 +1,9 @@
 package com.wmz.demo_w1;
 
+import android.support.annotation.BinderThread;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.wmz.demo_w1.base.BaseActivity;
@@ -10,7 +12,7 @@ import com.wmz.demo_w1.bean.Weather;
 import com.wmz.mylibrary.EventBusMessage;
 import com.wmz.mylibrary.adapter.MyFragmentPagerAdapter;
 import com.wmz.mylibrary.adapter.ViewHolder;
-import com.wmz.mylibrary.helper.OkHttpHelper;
+import com.wmz.mylibrary.network.OkHttpRequest;
 import com.wmz.mylibrary.utils.GsonUtils;
 
 import org.greenrobot.eventbus.EventBus;
@@ -26,6 +28,11 @@ import okhttp3.Response;
 
 public class NetworkActivity extends BaseActivity {
 
+    @BindView(R.id.btn)
+    Button mBtn;
+    @BindView(R.id.tv)
+    TextView mTv;
+
     @BindView(R.id.network_viewpager)
     ViewPager mViewPager;
 
@@ -38,6 +45,23 @@ public class NetworkActivity extends BaseActivity {
     protected void initView() {
         super.initData();
         initViewPager();
+    }
+    @OnClick(R.id.btn)
+    void onClick(){
+        mBtn.setText("start request");
+        String url = "http://api.map.baidu.com/telematics/v3/weather?location=深圳&output=json&ak=UMs5TPhtIKtzxG6RQz2QcSPs";
+        OkHttpRequest.getInstance().enqueue(url, new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                String content = response.body().string();
+
+            }
+        });
     }
 
     private void initViewPager() {
@@ -70,8 +94,8 @@ public class NetworkActivity extends BaseActivity {
         }
 
         private void okHttpRequest() {
-            String url = "http://api.map.baidu.com/telematics/v3/weather?location=深圳&output=json&ak=UMs5TPhtIKtzxG6RQz2QcSPs";
-            OkHttpHelper.getInstance().enqueue(url, new Callback() {
+            String url = "http://api.map.baidu.com/telematics/v3/weather?location=北京&output=json&ak=UMs5TPhtIKtzxG6RQz2QcSPs";
+            OkHttpRequest.getInstance().enqueue(url, new Callback() {
                 @Override
                 public void onFailure(Call call, IOException e) {
 

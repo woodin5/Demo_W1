@@ -101,11 +101,11 @@ public class TabView extends RelativeLayout {
         mChildViewSelColor = Color.rgb(255,255,255);
         mChildViewUnSelColor = Color.rgb(255,255,255);
         mTabViewBackgroundColor= Color.rgb(255,255,255);
-        mTabViewHeight=TabViewUtil.dp2px(context,52);
-        mImageViewTextViewMargin=TabViewUtil.dp2px(context,2);
-        mTextViewSize=TabViewUtil.sp2px(context,14);
-        mImageViewWidth=TabViewUtil.dp2px(context,30);
-        mImageViewHeight=TabViewUtil.dp2px(context,30);
+        mTabViewHeight= dp2px(context,52);
+        mImageViewTextViewMargin= dp2px(context,2);
+        mTextViewSize= sp2px(context,14);
+        mImageViewWidth= dp2px(context,30);
+        mImageViewHeight= dp2px(context,30);
 
     }
 
@@ -371,7 +371,7 @@ public class TabView extends RelativeLayout {
         this.mImageViewTextViewMargin=margin;
     }
     public void setTextViewSize(int size){
-        this.mTextViewSize= TabViewUtil.sp2px(getContext(),size);
+        this.mTextViewSize= sp2px(getContext(),size);
     }
     public void setImageViewWidth(int width){
         this.mImageViewWidth=width;
@@ -384,4 +384,12 @@ public class TabView extends RelativeLayout {
     }
 
 
+    public int dp2px(Context context, float dpValue) {
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dpValue, context.getResources().getDisplayMetrics());
+    }
+
+    public int sp2px(Context context, float spValue) {
+        return (int) TypedValue.applyDimension(
+                TypedValue.COMPLEX_UNIT_SP, spValue, context.getResources().getDisplayMetrics());
+    }
 }

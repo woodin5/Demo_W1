@@ -30,7 +30,7 @@ public class NetworkRequest {
         ExecutorManager.execute(new Runnable() {
             @Override
             public void run() {
-                NetworkExecuter.executeByGet(url, response);
+                NetworkExecutor.executeByGet(url, response);
             }
         });
     }
@@ -45,7 +45,7 @@ public class NetworkRequest {
         ExecutorManager.execute(new Runnable() {
             @Override
             public void run() {
-                NetworkExecuter.executeByPost(url,params,response);
+                NetworkExecutor.executeByPost(url,params,response);
             }
         });
     }

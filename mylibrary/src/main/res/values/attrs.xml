@@ -1,56 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--TabView-->
-    <declare-styleable name="TabView">
-        <attr name="tab_textViewSelColor"
-            format="reference|color"/>
-        <attr name="tab_textViewUnSelColor"
-            format="reference|color"/>
-        <attr name="tab_tabViewBackgroundColor"
-            format="reference|color"/>
-        <attr name="tab_tabViewHeight"
-            format="dimension"/>
-        <attr name="imageViewTextViewMargin"
-            format="dimension"/>
-        <attr name="tab_textViewSize"
-            format="dimension"/>
-        <attr name="tab_imageViewWidth"
-            format="dimension"/>
-        <attr name="tab_imageViewHeight"
-            format="dimension"/>
-        <attr name="tab_tabViewGravity">
-        <flag name="top" value="0x30" />
-        <flag name="bottom" value="0x50" />
-        <flag name="left" value="0x03" />
-        <flag name="right" value="0x05" />
-        </attr>
-        <attr name="tab_tabViewDefaultPosition"
-            format="integer"/>
-    </declare-styleable>
+    <!--&lt;!&ndash;TabView&ndash;&gt;-->
+    <!--<declare-styleable name="TabView">-->
+        <!--<attr name="tab_textViewSelColor"-->
+            <!--format="reference|color"/>-->
+        <!--<attr name="tab_textViewUnSelColor"-->
+            <!--format="reference|color"/>-->
+        <!--<attr name="tab_tabViewBackgroundColor"-->
+            <!--format="reference|color"/>-->
+        <!--<attr name="tab_tabViewHeight"-->
+            <!--format="dimension"/>-->
+        <!--<attr name="imageViewTextViewMargin"-->
+            <!--format="dimension"/>-->
+        <!--<attr name="tab_textViewSize"-->
+            <!--format="dimension"/>-->
+        <!--<attr name="tab_imageViewWidth"-->
+            <!--format="dimension"/>-->
+        <!--<attr name="tab_imageViewHeight"-->
+            <!--format="dimension"/>-->
+        <!--<attr name="tab_tabViewGravity">-->
+        <!--<flag name="top" value="0x30" />-->
+        <!--<flag name="bottom" value="0x50" />-->
+        <!--<flag name="left" value="0x03" />-->
+        <!--<flag name="right" value="0x05" />-->
+        <!--</attr>-->
+        <!--<attr name="tab_tabViewDefaultPosition"-->
+            <!--format="integer"/>-->
+    <!--</declare-styleable>-->
 
-    <!-- PagerSlidingTab -->
-    <declare-styleable name="PagerSlidingTab">
-        <attr name="indicatorColor" format="color" />
-        <attr name="underlineColor" format="color" />
-        <attr name="dividerColor" format="color" />
-        <attr name="indicatorHeight" format="dimension" />
-        <attr name="underlineHeight" format="dimension" />
-        <attr name="pst_dividerPadding" format="dimension" />
-        <attr name="tabPaddingLeftRight" format="dimension" />
-        <attr name="scrollOffset" format="dimension" />
-        <attr name="tabBackground" format="reference" />
-        <attr name="shouldExpand" format="boolean" />
-        <attr name="pst_textAllCaps" format="boolean" />
-    </declare-styleable>
+    <!--&lt;!&ndash; PagerSlidingTab &ndash;&gt;-->
+    <!--<declare-styleable name="PagerSlidingTab">-->
+        <!--<attr name="indicatorColor" format="color" />-->
+        <!--<attr name="underlineColor" format="color" />-->
+        <!--<attr name="dividerColor" format="color" />-->
+        <!--<attr name="indicatorHeight" format="dimension" />-->
+        <!--<attr name="underlineHeight" format="dimension" />-->
+        <!--<attr name="pst_dividerPadding" format="dimension" />-->
+        <!--<attr name="tabPaddingLeftRight" format="dimension" />-->
+        <!--<attr name="scrollOffset" format="dimension" />-->
+        <!--<attr name="tabBackground" format="reference" />-->
+        <!--<attr name="shouldExpand" format="boolean" />-->
+        <!--<attr name="pst_textAllCaps" format="boolean" />-->
+    <!--</declare-styleable>-->
 
-    <!--FlyBanner-->
-    <declare-styleable name="FlyBanner">
-        <attr name="points_visibility" format="boolean"/>
-        <attr name="points_position" format="enum">
-            <enum name="CENTER" value="0"/>
-            <enum name="LEFT" value="1"/>
-            <enum name="RIGHT" value="2"/>
-        </attr>
-        <attr name="points_container_background" format="reference|color"/>
-    </declare-styleable>
+    <!--&lt;!&ndash;FlyBanner&ndash;&gt;-->
+    <!--<declare-styleable name="FlyBanner">-->
+        <!--<attr name="points_visibility" format="boolean"/>-->
+        <!--<attr name="points_position" format="enum">-->
+            <!--<enum name="CENTER" value="0"/>-->
+            <!--<enum name="LEFT" value="1"/>-->
+            <!--<enum name="RIGHT" value="2"/>-->
+        <!--</attr>-->
+        <!--<attr name="points_container_background" format="reference|color"/>-->
+    <!--</declare-styleable>-->
 </resources>

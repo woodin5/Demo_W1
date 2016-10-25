@@ -23,7 +23,6 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.wmz.mylibrary.R;
 
-import java.lang.reflect.Field;
 import java.util.List;
 
 /**
@@ -62,7 +61,7 @@ public class FlyBanner extends RelativeLayout {
     //指示点位置
     private int mPointPosition = CENTER;
     //指示点资源
-    private int mPointDrawableResId = R.drawable.selector_bgabanner_point;
+    private int mPointDrawableResId = R.drawable.selector_flybanner_point;
     //指示容器背景
     private Drawable mPointContainerBackgroundDrawable;
     //指示容器布局规则
