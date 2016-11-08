@@ -27,7 +27,9 @@ public abstract class MyCommonAdapter<T> extends MyBaseAdapter {
 
         ViewHolder viewHolder = ViewHolder.get(convertView, parent, builderView(mInflater));
         // 绑定数据
-        builderData(viewHolder, list.get(position), position);
+        if(list.size()>0) {
+            builderData(viewHolder, list.get(position), position);
+        }
 
         return viewHolder.getItemView();
 
@@ -55,6 +57,7 @@ public abstract class MyCommonAdapter<T> extends MyBaseAdapter {
      */
     // protected abstract void builderData(Object viewHolder, Object obj);
     protected abstract void builderData(ViewHolder viewHolder, Object obj, int position);
+//    protected abstract void builderData(ViewHolder viewHolder, T obj, int position);
 
     /**
      * 构造viewholder

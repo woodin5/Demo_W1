@@ -48,7 +48,9 @@ public abstract class BaseRecyclerAdapter<T> extends RecyclerView.Adapter<Recycl
 
     @Override
     public void onBindViewHolder(RecyclerViewHolder holder, int position) {
-        bindData(holder, position, mItems.get(position));
+        if(mItems.size()>0) {
+            bindData(holder, position, mItems.get(position));
+        }
     }
 
 

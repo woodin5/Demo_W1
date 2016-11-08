@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    tools:context="com.wmz.demo_w1.SplitScreenActivity">
+    tools:context="com.wmz.demo_w1.activity.SplitScreenActivity">
 
     <Button
         android:id="@+id/splitscreen_show"

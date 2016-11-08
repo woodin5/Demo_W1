@@ -8,7 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    tools:context="com.wmz.demo_w1.NetworkActivity">
+    tools:context="com.wmz.demo_w1.activity.NetworkActivity">
 
     <include
         android:layout_weight="1"

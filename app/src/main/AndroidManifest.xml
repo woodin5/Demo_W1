@@ -10,13 +10,13 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:name=".MyApplication"
+        android:name="com.wmz.mylibrary.WmzApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <activity android:name=".MainActivity">
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".EventBusActivity"
+            android:name=".activity.EventBusActivity"
             android:label="@string/eventBus">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,9 +32,9 @@
                 <category android:name="LIST" />
             </intent-filter>
         </activity>
-        <activity android:name=".EventBus2Activity" />
+        <activity android:name=".activity.EventBus2Activity" />
         <activity
-            android:name=".SweetDialogActivity"
+            android:name=".activity.SweetDialogActivity"
             android:label="@string/sweetDialog">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -43,7 +43,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".NetworkActivity"
+            android:name=".activity.NetworkActivity"
             android:label="@string/network">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -52,7 +52,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AdapterActivity"
+            android:name=".activity.AdapterActivity"
             android:label="@string/adapter">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -61,7 +61,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".FragmentActivity"
+            android:name=".activity.FragmentActivity"
             android:label="@string/fragment">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -70,7 +70,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".DialogActivity"
+            android:name=".activity.DialogActivity"
             android:label="@string/dialog"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -80,7 +80,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MaterialDialogActivity"
+            android:name=".activity.MaterialDialogActivity"
             android:label="@string/materialDialog">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -89,7 +89,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".RecyclerViewActivity"
+            android:name=".activity.RecyclerViewActivity"
             android:label="@string/recyclerview">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -98,7 +98,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AutoLayoutActivity"
+            android:name=".activity.AutoLayoutActivity"
             android:label="@string/autoLayout">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -115,7 +115,7 @@
             android:value="1920" />
 
         <activity
-            android:name=".SplitScreenActivity"
+            android:name=".activity.SplitScreenActivity"
             android:label="@string/splitScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -124,7 +124,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".NwDrawerLayoutActivity"
+            android:name=".activity.NwDrawerLayoutActivity"
             android:label="@string/nwDrawerLayout">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -133,7 +133,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".NwTabLayoutActivity"
+            android:name=".activity.NwTabLayoutActivity"
             android:label="@string/nwTabLayout">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -142,7 +142,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".NwSwipeRefreshLayoutActivity"
+            android:name=".activity.NwSwipeRefreshLayoutActivity"
             android:label="@string/nwSwipeRefreshLayout">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -151,7 +151,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".FlyBannerActivity"
+            android:name=".activity.FlyBannerActivity"
             android:label="@string/flyBanner">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -160,7 +160,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AVLoadingIndicatorViewActivity"
+            android:name=".activity.AVLoadingIndicatorViewActivity"
             android:label="@string/AVLoadingIndicatorView">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -169,7 +169,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".CrashActivity"
+            android:name=".activity.CrashActivity"
             android:label="@string/crash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -178,7 +178,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".TextDrawableActivity"
+            android:name=".activity.TextDrawableActivity"
             android:label="@string/textDrawable">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -187,7 +187,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".HTML5CustomWebViewActivity"
+            android:name=".activity.HTML5CustomWebViewActivity"
             android:label="@string/HTML5CustomWebView">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -196,7 +196,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ViewDragActivity"
+            android:name=".activity.ViewDragActivity"
             android:label="@string/viewDrag">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -204,8 +204,35 @@
                 <category android:name="LIST" />
             </intent-filter>
         </activity>
-        <activity android:name=".TabActivity"
+        <activity
+            android:name=".activity.TabActivity"
             android:label="@string/tab">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="LIST" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.XRecyclerViewActivity"
+            android:label="@string/XRecyclerView">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="LIST" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.OrmLiteActivity"
+            android:label="@string/OrmLite">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="LIST" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.MVPActivity"
+            android:label="@string/MVP">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="LIST"/>

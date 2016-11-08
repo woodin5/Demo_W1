@@ -35,6 +35,7 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
             init();
             initView(mRootView);
             initData();
+            initEvent();
             ViewHolder viewHolder = new ViewHolder(mRootView);
             builderData(viewHolder);
         }
@@ -86,6 +87,11 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
      * 初始化数据
      */
     protected  void initData(){}
+
+    /**
+     * 初始化事件
+     */
+    protected  void initEvent(){}
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void handleEventBus(EventBusMessage message){

@@ -3,7 +3,7 @@ package com.wmz.mylibrary;
 import android.os.Message;
 
 /**
- * Created by Administrator on 2016/9/3.
+ * Created by wmz on 2016/9/3.
  */
 public class EventBusMessage<T> {
     private String msg;

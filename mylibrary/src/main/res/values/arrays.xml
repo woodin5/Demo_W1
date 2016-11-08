@@ -16,4 +16,10 @@
         <item>5</item>
         <item>6</item>
     </string-array>
+    <string-array name="ormlite_list">
+        <item>增</item>
+        <item>删</item>
+        <item>查</item>
+        <item>改</item>
+    </string-array>
 </resources>

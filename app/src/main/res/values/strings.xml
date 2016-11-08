@@ -20,6 +20,9 @@
     <string name="HTML5CustomWebView">HTML5CustomWebView</string>
     <string name="viewDrag">ViewDrag</string>
     <string name="tab">Tab</string>
+    <string name="XRecyclerView">XRecyclerView</string>
+    <string name="OrmLite">OrmLite</string>
+    <string name="MVP">MVP</string>
 
     <!--adapter-->
     <string name="showString">show String</string>

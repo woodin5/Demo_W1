@@ -16,7 +16,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /**
- * Created by Administrator on 2016/10/7.
+ * Created by wmz on 2016/10/7.
  */
 
 public class HorizontalListView extends AdapterView<ListAdapter>
