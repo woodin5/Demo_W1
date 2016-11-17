@@ -231,8 +231,26 @@
                 <category android:name="LIST" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.MVPActivity"
+        <activity
+            android:name=".activity.MVPActivity"
             android:label="@string/MVP">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="LIST" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.NetworkMonitorActivity"
+            android:label="@string/NetworkMonitor">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="LIST" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.WebViewActivity"
+            android:label="@string/WebView">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="LIST"/>

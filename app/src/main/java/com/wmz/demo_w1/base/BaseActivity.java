@@ -11,6 +11,9 @@ import android.text.TextUtils;
 import android.view.Window;
 import android.widget.Toast;
 
+import com.android.network.monitor.NetworkManager;
+import com.android.network.monitor.NetworkObserver;
+import com.android.network.monitor.NetworkType;
 import com.wmz.mylibrary.utils.WMZLog;
 
 import butterknife.ButterKnife;
@@ -24,7 +27,21 @@ public abstract class BaseActivity extends com.wmz.mylibrary.base.BaseActivity {
     protected void init() {
         super.init();
         ButterKnife.bind(this);
-//        registerDateTransReceiver();
+
+    }
+
+    @Override
+    protected void initData() {
+        super.initData();
+    }
+
+    @Override
+    protected void initEvent() {
+        super.initEvent();
+        if (networkObserver != null) {
+            NetworkManager.getInstance().initialized(this);
+            NetworkManager.getInstance().register(networkObserver);
+        }
     }
 
     private SweetAlertDialog mProgressDialog;
@@ -54,23 +71,22 @@ public abstract class BaseActivity extends com.wmz.mylibrary.base.BaseActivity {
         mToast.show();
     }
 
-    public static final String CONNECTIVITY_CHANGE_ACTION = "android.net.conn.CONNECTIVITY_CHANGE";
-    private void registerDateTransReceiver() {
-        IntentFilter filter = new IntentFilter();
-        filter.addAction(CONNECTIVITY_CHANGE_ACTION);
-        filter.setPriority(1000);
-        registerReceiver(new MyReceiver(), filter);
+    //网络监听观察者
+    private NetworkObserver networkObserver =  new NetworkObserver() {
+        @Override
+        public void onNetworkStateChanged(NetAction action) {
+            onNetworkChanged(action.getType());
+        }
+    };
+
+    public void onNetworkChanged(NetworkType netWorkType) {
     }
 
-    class MyReceiver extends BroadcastReceiver {
-
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            String action = intent.getAction();
-            if (TextUtils.equals(action, CONNECTIVITY_CHANGE_ACTION)) {//网络变化的时候会发送通知
-                showToast("网络变化了");
-                return;
-            }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (networkObserver != null) {
+            NetworkManager.getInstance().unregister(networkObserver);
         }
     }
 }

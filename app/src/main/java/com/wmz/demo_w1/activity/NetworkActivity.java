@@ -1,5 +1,6 @@
 package com.wmz.demo_w1.activity;
 
+import android.graphics.Color;
 import android.support.annotation.BinderThread;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
@@ -11,6 +12,8 @@ import com.wmz.demo_w1.base.BaseActivity;
 import com.wmz.demo_w1.base.BaseFragment;
 import com.wmz.demo_w1.bean.Weather;
 import com.wmz.mylibrary.EventBusMessage;
+import com.wmz.mylibrary.StatusBarCompat;
+import com.wmz.mylibrary.WmzApplication;
 import com.wmz.mylibrary.adapter.MyFragmentPagerAdapter;
 import com.wmz.mylibrary.adapter.ViewHolder;
 import com.wmz.mylibrary.network.OkHttpRequest;
@@ -47,7 +50,13 @@ public class NetworkActivity extends BaseActivity {
     protected void initView() {
         super.initData();
         initViewPager();
+//        StatusBarCompat.compat(NetworkActivity.this, android.R.color.transparent);
     }
+
+    @Override
+    protected void initEvent() {
+    }
+
     @OnClick(R.id.btn)
     void onClick(){
         if(NetUtils.hasNetwork(mContext)){

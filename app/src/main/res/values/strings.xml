@@ -23,6 +23,8 @@
     <string name="XRecyclerView">XRecyclerView</string>
     <string name="OrmLite">OrmLite</string>
     <string name="MVP">MVP</string>
+    <string name="NetworkMonitor">NetworkMonitor</string>
+    <string name="WebView">WebView</string>
 
     <!--adapter-->
     <string name="showString">show String</string>

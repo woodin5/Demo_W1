@@ -18,7 +18,8 @@ public class HTML5CustomWebViewActivity extends AppCompatActivity {
     private Context mContext = HTML5CustomWebViewActivity.this;
     private HTML5CustomWebView mWebView;
     //http://www.zttmall.com/Wapshop/Topic.aspx?TopicId=18
-    private String ad_url = "http://www.zttmall.com/Wapshop/Topic.aspx?TopicId=18";
+//    private String ad_url = "http://www.zttmall.com/Wapshop/Topic.aspx?TopicId=18";
+    private String ad_url = "http://192.168.0.8:8081/mobile";
     private String title = "百度一下你就知道";
 
     @Override
