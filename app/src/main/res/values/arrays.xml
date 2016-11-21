@@ -8,4 +8,13 @@
         <item>#3F51B5</item>
         <item>#2196F3</item>
     </array>
+
+    <string-array name="glide_operate">
+        <item>从资源中加载</item>
+        <item>从文件中加载</item>
+        <item>从Uri中加载</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
 </resources>

@@ -51,6 +51,7 @@ public class RecyclerViewActivity extends BaseActivity {
         mHlv.setAdapter(new MyCommonAdapter<String>(RecyclerViewActivity.this, list) {
             @Override
             protected void builderData(ViewHolder viewHolder, Object obj, int position) {
+                if(obj==null) return;
                 viewHolder.setText(R.id.btn, obj.toString());
             }
 
@@ -68,6 +69,7 @@ public class RecyclerViewActivity extends BaseActivity {
 
         initAdapter();
     }
+
 
     private void showRecyclerView(int position) {
         switch (position) {
@@ -96,6 +98,7 @@ public class RecyclerViewActivity extends BaseActivity {
 
     @Override
     protected void initEvent() {
+        super.initEvent();
      /*   //默认的动画效果
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         //添加分隔线

@@ -249,8 +249,17 @@
                 <category android:name="LIST" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.WebViewActivity"
+        <activity
+            android:name=".activity.WebViewActivity"
             android:label="@string/WebView">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="LIST" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.GlideActivity"
+            android:label="@string/Glide">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="LIST"/>

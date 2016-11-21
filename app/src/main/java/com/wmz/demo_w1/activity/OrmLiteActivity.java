@@ -8,8 +8,6 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 
-import com.j256.ormlite.dao.CloseableIterator;
-import com.j256.ormlite.stmt.Where;
 import com.wmz.demo_w1.R;
 import com.wmz.demo_w1.base.BaseActivity;
 import com.wmz.demo_w1.ormlite.bean.User;
@@ -18,7 +16,6 @@ import com.wmz.mylibrary.adapter.MyCommonAdapter;
 import com.wmz.mylibrary.adapter.ViewHolder;
 import com.wmz.mylibrary.view.HorizontalListView;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
@@ -150,7 +147,7 @@ public class OrmLiteActivity extends BaseActivity {
 
         @Override
         protected int builderView(LayoutInflater inflater) {
-            return R.layout.item_text;
+            return R.layout.item_tv;
         }
     }
 }

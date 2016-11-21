@@ -50,7 +50,7 @@ public class RefreshFootAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         //进行判断显示类型，来创建返回不同的View
         if(viewType==TYPE_ITEM){
-            View view=mInflater.inflate(R.layout.item_text,parent,false);
+            View view=mInflater.inflate(R.layout.item_tv,parent,false);
             //这边可以做一些属性设置，甚至事件监听绑定
             //view.setBackgroundColor(Color.RED);
             ItemViewHolder itemViewHolder=new ItemViewHolder(view);

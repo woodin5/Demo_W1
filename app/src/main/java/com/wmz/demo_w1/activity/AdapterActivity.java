@@ -176,7 +176,7 @@ public class AdapterActivity extends com.wmz.demo_w1.base.BaseActivity {
         }
         @Override
         public RecyclerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_text,parent,false);
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_tv,parent,false);
             RecyclerViewHolder holder = new RecyclerViewHolder(view);
             return holder;
         }
