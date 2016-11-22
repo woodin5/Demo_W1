@@ -26,6 +26,7 @@
     <string name="NetworkMonitor">NetworkMonitor</string>
     <string name="WebView">WebView</string>
     <string name="Glide">Glide</string>
+    <string name="SuperTextView">SuperTextView</string>
 
     <!--adapter-->
     <string name="showString">show String</string>
